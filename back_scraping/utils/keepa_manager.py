@@ -1,10 +1,16 @@
 import io
+import os
+import sys
 
 import requests
 
 import config
 import urllib.parse
 import re
+
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+sys.path.append(parent_dir)
 
 def get_from_bar_code(bar_code: str):
     url = f"https://api.keepa.com/product?key={config.KEEPA_API}&domain=2&code={bar_code}&stats=7"

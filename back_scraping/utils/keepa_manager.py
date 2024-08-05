@@ -2,7 +2,7 @@ import io
 
 import requests
 
-from back_scraping import config
+import config
 import urllib.parse
 import re
 

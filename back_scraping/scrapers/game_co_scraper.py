@@ -3,9 +3,9 @@ from datetime import datetime, timedelta
 from curl_cffi import requests
 from bs4 import BeautifulSoup
 
-from back_scraping.utils import keepa_manager
-from back_scraping.utils import links
-from back_scraping.utils.discount_properties import is_big_discount
+from utils import keepa_manager
+from utils import links
+from utils.discount_properties import is_big_discount
 
 url = "https://www.game.co.uk/en/playstation/games/?contentOnly=&inStockOnly=true&listerOnly=&pageSize=600"
 headers = {

@@ -5,10 +5,10 @@ from threading import Thread
 
 import requests
 
-from back_scraping import config
-from back_scraping.scrapers import argos_scraper, currys_scraper, game_co_scraper, johnlewis_scraper, dell_scraper, \
+import config
+from scrapers import argos_scraper, currys_scraper, game_co_scraper, johnlewis_scraper, dell_scraper, \
     ryman_scraper, laptopsdirect_scraper, houseoffraser_scraper, coolshop_scraper, selfridges_scraper
-from back_scraping.utils.discount_properties import is_big_discount
+from utils.discount_properties import is_big_discount
 
 
 def get_website_update(web_scraper, link, check_keepa=True):

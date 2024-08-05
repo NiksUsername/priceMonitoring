@@ -4,9 +4,9 @@ from datetime import datetime, timedelta
 from curl_cffi import requests
 from bs4 import BeautifulSoup
 
-from back_scraping.utils import keepa_manager
-from back_scraping.utils import links
-from back_scraping.utils.discount_properties import is_big_discount
+from utils import keepa_manager
+from utils import links
+from utils.discount_properties import is_big_discount
 header = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.234 Safari/537.36',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',

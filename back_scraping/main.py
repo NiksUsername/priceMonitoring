@@ -36,8 +36,20 @@ def filter_drops(drops):
 def check_for_new_notifications(web_scraper, name):
     curr_time = datetime.now()
     for link in web_scraper.get_links():
-        time.sleep(1)
-        get_website_update(web_scraper, link, False)
+        try:
+            time.sleep(1)
+            get_website_update(web_scraper, link, False)
+        except:
+            traceback.print_exc()
+            continue
+    if name == "coolshop":
+        for link in web_scraper.get_links():
+            try:
+                time.sleep(1)
+                get_website_update(web_scraper, link, False)
+            except:
+                traceback.print_exc()
+                continue
     while True:
         try:
             for link in web_scraper.get_links():
@@ -61,15 +73,15 @@ def check_for_new_notifications(web_scraper, name):
             print(f"Major {name} Exception")
 
 
-Thread(check_for_new_notifications(argos_scraper, "argos")).start()
-Thread(check_for_new_notifications(currys_scraper, "currys")).start()
-Thread(check_for_new_notifications(game_co_scraper, "game")).start()
-Thread(check_for_new_notifications(johnlewis_scraper, "johnlewis_scraper")).start()
-Thread(check_for_new_notifications(selfridges_scraper, "selfridges")).start()
-Thread(check_for_new_notifications(coolshop_scraper, "coolshop")).start()
-Thread(check_for_new_notifications(houseoffraser_scraper, "houseoffraser")).start()
-Thread(check_for_new_notifications(laptopsdirect_scraper, "laptopsdirect")).start()
-Thread(check_for_new_notifications(ryman_scraper, "ryman")).start()
-Thread(check_for_new_notifications(dell_scraper, "dell")).start()
+Thread(target=check_for_new_notifications, args=(argos_scraper, "argos")).start()
+Thread(target=check_for_new_notifications, args=(currys_scraper, "currys")).start()
+Thread(target=check_for_new_notifications, args=(game_co_scraper, "game")).start()
+Thread(target=check_for_new_notifications, args=(johnlewis_scraper, "johnlewis_scraper")).start()
+Thread(target=check_for_new_notifications, args=(selfridges_scraper, "selfridges")).start()
+Thread(target=check_for_new_notifications, args=(coolshop_scraper, "coolshop")).start()
+Thread(target=check_for_new_notifications, args=(houseoffraser_scraper, "houseoffraser")).start()
+Thread(target=check_for_new_notifications, args=(laptopsdirect_scraper, "laptopsdirect")).start()
+Thread(target=check_for_new_notifications, args=(ryman_scraper, "ryman")).start()
+Thread(target=check_for_new_notifications, args=(dell_scraper, "dell")).start()
 
 

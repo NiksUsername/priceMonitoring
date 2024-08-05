@@ -4,7 +4,7 @@ import discord
 from curl_cffi import requests
 from quart import Quart, request, jsonify
 
-from bots import config
+import config
 
 intents = discord.Intents.default()
 intents.messages = True

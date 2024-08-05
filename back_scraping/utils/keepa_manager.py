@@ -4,7 +4,7 @@ import sys
 
 import requests
 
-import config
+from .. import config
 import urllib.parse
 import re
 

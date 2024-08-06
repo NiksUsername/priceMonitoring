@@ -51,6 +51,7 @@ def get_new_prices(url, page_number=1):
     api_url = f"https://www.selfridges.com/api/cms/ecom/v1/GB/en/productview/byCategory/byIds?ids={category}&pageNumber={page_number}&pageSize=180"
     response = requests.get(api_url, headers=header, cookies=cookies, impersonate="chrome120")
     discounts_list = []
+    print(response.content)
 
     if response.status_code == 200:
 
@@ -81,7 +82,6 @@ def get_new_prices(url, page_number=1):
                     "old_price": old_price,
                     "image":image
                 }
-
                 if link in prices:
                     item_data["old_price"] = prices[link]["old_price"]
                     if prices[link]["old_price"] > price and price != prices[link]["price"] and prices[link][image] == image and link not in temporary_discounts:

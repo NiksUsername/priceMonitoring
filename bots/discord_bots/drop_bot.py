@@ -71,6 +71,7 @@ async def run_bot():
 async def get_emdeds(prices, website):
     messages = []
     for price in prices:
+        print(price)
         if price["old_price"] == 0:
             old_price = "n/a"
             change = "n/a"

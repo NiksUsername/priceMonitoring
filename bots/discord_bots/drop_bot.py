@@ -38,7 +38,7 @@ async def get_message():
         return jsonify({'error': 'channel_id and content are required'}), 400
 
     # Send message via the bot
-    await notify(json.loads(data), config.channel_ids[ping_type][website_name])
+    await notify(data, config.channel_ids[ping_type][website_name])
 
     return jsonify({'status': 'success'}), 200
 

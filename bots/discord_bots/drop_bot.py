@@ -43,6 +43,7 @@ async def get_message():
     return jsonify({'status': 'success'}), 200
 
 async def notify(pings, channel):
+
     notifications = await get_emdeds(pings, "")
     i = 0
     for notification in notifications:
@@ -70,6 +71,7 @@ async def run_bot():
 
 async def get_emdeds(prices, website):
     messages = []
+    print(prices)
     for price in prices:
         print(price)
         if price["old_price"] == 0:

@@ -60,11 +60,11 @@ def check_for_new_notifications(web_scraper, name):
                     continue
                 for type in range(len(return_value)):
                     for value in return_value[type]:
-                        requests.post(url=config.api_urls[type], json={
+                        requests.post(url=config.api_urls[type], json=[{
                             "data":value,
                             "type":type,
                             "website":name
-                        })
+                        }])
                 time.sleep(1)
             delta = datetime.now() - curr_time
             time.sleep(max(300 - delta.total_seconds(), 0))

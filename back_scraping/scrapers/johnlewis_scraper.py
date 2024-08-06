@@ -4,9 +4,9 @@ from datetime import datetime, timedelta
 import requests
 from bs4 import BeautifulSoup
 
-from utils import keepa_manager
-from utils import links
-from utils.discount_properties import is_big_discount
+from back_scraping.utils import keepa_manager
+from back_scraping.utils import links
+from back_scraping.utils.discount_properties import is_big_discount
 
 header = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0',

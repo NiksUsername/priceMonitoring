@@ -6,9 +6,9 @@ import discord
 from curl_cffi import requests
 from bs4 import BeautifulSoup
 
-from utils import keepa_manager
-from utils import links
-from utils.discount_properties import is_big_discount
+from back_scraping.utils import keepa_manager
+from back_scraping.utils import links
+from back_scraping.utils.discount_properties import is_big_discount
 header = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.234 Safari/537.36',
     'Accept': 'application/json, text/javascript, */*; q=0.01',
